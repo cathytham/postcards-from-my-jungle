@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postcards from my jungle</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <h1>Postcards from my Jungle</h1>
+    <div class="slideshow-container">
+        <img id="animalImage" src="animal_00.png" alt="Imagined Animal">
+        <p class="description" id="animalText">Mysterious creature from the deep jungle.</p>
+    </div>
+    <p>click on screen if audio not playing</p>
+    <footer><p id="footer_text">&copy; Cart 498 - Cathy Tham</p></footer>
+
+    <script>
+        let currentIndex = 0;
+        const images = [];
+        // Define the audio object
+        const audio = new Audio();
+
+        //Push elements in array
+        for (let i = 1; i <= 50; i++) {
+            let index = i.toString().padStart(2, '0');
+            images.push(`images/animal_${index}.png`);
+        }
+
+        const texts = [
+            "Chrik-chrik zuul!",
+            "Hraa-mooo chrra",
+            "Zuuu-hraa-klik!",
+            "Murr-graa-chaaa.",
+            "Tsk-tsk-hrooo?",
+            "Hrraa-chru-chru!",
+            "Ziii-hraa-morr.",
+            "Buuu-klik-zraa.",
+            "Chrrr-tsik-hraa!",
+            "Tsk-moor-graa?",
+            "Zraa-hruu-chraa!",
+            "Brii-chuur-zik!",
+            "Muur-tsaaa-brii?",
+            "Grra-moooor-chrik.",
+            "Klik-chuu-tsaa!",
+            "Hraa-tsik-zuuur."
+        ];
+
+        const sounds = [
+            "sounds/animal0.wav", "sounds/animal1.wav", "sounds/animal2.wav", "sounds/animal3.wav"
+        ];
+
+        //function to play sounds
+        function playSound(soundFile) {
+            // Create a new Audio object for each sound
+            const sound = new Audio(soundFile);
+            //loop sound
+            sound.loop = true;  
+            sound.play().catch(err => console.log("Audio cannot be played ", err));
+        }
+
+        //function to update the slideshow
+        function updateSlide() {
+            document.getElementById("animalImage").src = images[currentIndex];
+
+            //Chooose a random caption
+            let randomCaption = texts[Math.floor(Math.random() * texts.length)];
+            document.getElementById("animalText").textContent = randomCaption;
+
+            // Cycle through sounds
+            let soundIndex = currentIndex % sounds.length;
+            playSound(sounds[soundIndex]);
+        }
+
+        //function to transition to next slide
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateSlide();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            audio.play().catch(err => console.log("Autoplay blocked. Waiting for user interaction."));
+        });
+
+        // Try to recover autoplay if blocked
+        document.addEventListener("click", () => {
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+
+        // Automatically transition slides every 4 seconds
+        setInterval(nextSlide, 4000);
+
+        updateSlide();
+    </script>
+</body>
+</html>
+

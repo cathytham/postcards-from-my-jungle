@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #c9d1c7;
+    background: #f9f9f9 url(/header-image.jpg) no-repeat center;
+}
+/**image from this website:https://medialoot.com/item/chase-landing-page-template/ **/
+
+.slideshow-container {
+    position: relative;
+    max-width: 35%;
+    margin: auto;
+    background: rgba(221, 215, 210, 0.823);
+    padding: 2%;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+}
+.description {
+    margin-top: 5%;
+    font-size: 20px;
+    color: #12390d;
+    font-family: 'Arimo', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: #777;
+}
+h1{
+    color: #333;
+    font-family: 'Arimo', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 1%;
+}
+
+p{
+    color: whitesmoke;
+}
+footer{
+    padding-top: 5%;
+}
+
+#footer_text{
+    color: #333;
+}
