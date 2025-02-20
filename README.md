@@ -1,11 +1,8 @@
 # postcards-from-my-jungle
-Your strategies for training the models
-how you generated your fictional beasts' images, sounds, and language
-how the quality of the images and sounds could be improved.
 
 # Strategies used to Train the Image model and Generating Images
 
-To train my image, I started by searching databases on Hugging Face. I first selected a most downloaded database which was a large one; mertcobanov/animals. It took a long time to train but at the end worked after multiple tries. When attempting to generate the 50 images, CUDA ran out of memory and after multiple attempts and errors, I ran out of CPU memory. Therefore, I created another account and switched to a smaller dataset; "Rapidata/Other-Animals-10" which was allow a faster trainning by using the first 103 images. However when trying to generate the 50 images I had the same memory issue  After asking genAI about why and experiment with it for lot of hours, I ended being able to generate the 50 images that are grainy with muted of colors.
+To train my image, I started by searching databases on Hugging Face. I first selected a most downloaded database which was a large one; mertcobanov/animals. It took a long time to train but at the end worked after multiple tries. When attempting to generate the 50 images, CUDA ran out of memory and after multiple attempts and errors, I ran out of CPU memory. Therefore, I created another account and switched to a smaller dataset; "Rapidata/Other-Animals-10" which was allow a faster trainning by using the first 103 images and 50 epochs. However when trying to generate the 50 images I had the same memory issue  After asking genAI about why and experiment with it for lot of hours, I ended being able to generate the 50 images that are mostly grainy with muted of colors of violet, yellow, blue etc.
 
 # Generation sounds
 
